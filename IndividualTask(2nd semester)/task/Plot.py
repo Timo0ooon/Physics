@@ -17,7 +17,7 @@ class Plot:
 
         ax.set_title("Траектория движения подводной лодки c учетом сопротивления воды")
         ax.plot(numerical_x_values, numerical_y_values, label='Численное решение', color='blue')
-        ax.plot(analytical_x_values, analytical_y_values, label='Аналитическое решение', color='red')
+        # ax.plot(analytical_x_values, analytical_y_values, label='Аналитическое решение', color='red')
         
         ax.grid(True)
         ax.legend()
@@ -45,11 +45,11 @@ class Plot:
 
 
 if __name__ == '__main__':
-    numerical_solution1 = NumericalSolution(500.0, 300.0, 1_000, 20_000.0, 18_700_000, 10.0, 16.5, 30)
-    analytical_solution1 = AnalyticalSolution(500.0, 300.0, 20_000, 18_700_000.0, 10, 16.5)
+    numerical_solution1 = NumericalSolution(3000.0, 300.0, 1_000, 20_000.0, 18_700_000, 10.0, 16.5, 30)
+    analytical_solution1 = AnalyticalSolution(3000.0, 300.0, 20_000, 18_700_000.0, 10, 30.5)
 
     print(f"Сила Архимеда: {analytical_solution1.calculate_the_archimedes_force()}")
 
     plot = Plot(numerical_solution1, analytical_solution1)
     plot.plot_trajectory()
-    plot.plot_depth_versus_time()
+    # plot.plot_depth_versus_time()
